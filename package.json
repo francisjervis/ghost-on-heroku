@@ -11,6 +11,7 @@
   "version": "1.7.1",
   "dependencies": {
     "ghost": "^1.24.6",
+    "ghost-github": "tonyrewin/ghost-github",
     "mysql": "^2.15.0"
   },
   "engines": {
