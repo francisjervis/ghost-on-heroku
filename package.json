@@ -1,6 +1,6 @@
 {
   "name": "ghost-on-heroku",
-  "description": "Just a blogging platform on Heroku with some hacks.",
+  "description": "Just a blogging platform on Heroku with some hacks and free storage on github.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -11,8 +11,7 @@
   "version": "1.7.1",
   "dependencies": {
     "ghost": "^1.24.6",
-    "ghost-storage-adapter-s3": "^2.3.0",
-    "mysql": "^2.14.1"
+    "mysql": "^2.15.0"
   },
   "engines": {
     "node": "6.11.x"

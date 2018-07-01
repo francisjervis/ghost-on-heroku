@@ -9,36 +9,9 @@ var envValues = require('./common/env-values');
 var appRoot = path.join(__dirname, '..');
 
 function createConfig() {
-  var fileStorage, storage;
+  var fileStorage;
 
-  if (!!process.env.S3_ACCESS_KEY_ID) {
-    fileStorage = true
-    storage = {
-      active: 's3',
-      's3': {
-        accessKeyId:     process.env.S3_ACCESS_KEY_ID,
-        secretAccessKey: process.env.S3_ACCESS_SECRET_KEY,
-        bucket:          process.env.S3_BUCKET_NAME,
-        region:          process.env.S3_BUCKET_REGION,
-        assetHost:       process.env.S3_ASSET_HOST_URL
-      }
-    }
-  } else if (!!process.env.BUCKETEER_AWS_ACCESS_KEY_ID) {
-    fileStorage = true
-    storage = {
-      active: 's3',
-      's3': {
-        accessKeyId:     process.env.BUCKETEER_AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.BUCKETEER_AWS_SECRET_ACCESS_KEY,
-        bucket:          process.env.BUCKETEER_BUCKET_NAME,
-        region:          process.env.S3_BUCKET_REGION,
-        assetHost:       process.env.S3_ASSET_HOST_URL
-      }
-    }
-  } else {
-    fileStorage = false
-    storage = {}
-  }
+  fileStorage = !!process.env.GITHUB_TOKEN;
 
   config = {
     url: process.env.PUBLIC_URL,
@@ -57,7 +30,22 @@ function createConfig() {
       }
     },
     fileStorage: fileStorage,
-    storage: storage,
+      storage: {
+        active: "ghost-github",
+        "ghost-github": {
+            // Required: Can either be basic, oauth, or token
+            type: "oauth",
+            token: process.env.GITHUB_TOKEN,
+            // Required: Name of repo you want to save files to
+            repo: "ghost-on-heroku",
+            // Optional: Will save to branch of repo, defaults to master
+            branch: "gh-pages",
+            // Optional: Will place the image in the specified directory rather than root
+            destination: "",
+            // Optional: Will use base URL for image requests
+            baseUrl: "https://cdn.example.com"
+        }
+    },
     database: {
       client: 'mysql',
       connection: getMysqlConfig(envValues.mysqlDatabaseUrl),
