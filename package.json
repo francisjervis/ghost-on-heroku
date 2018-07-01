@@ -10,7 +10,7 @@
   "private": true,
   "version": "1.7.1",
   "dependencies": {
-    "casper": "github:tonyrewin/casper-i18n",
+    "casper": "github:tonyrewin/casper-i18n#i18n-translatable-frontend",
     "ghost": "^1.24.6",
     "ghost-github": "github:tonyrewin/ghost-github",
     "mysql": "^2.15.0"
