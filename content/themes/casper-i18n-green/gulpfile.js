@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
 // gulp plugins and utils
-// var gutil = require('gulp-util');
+// var gutil = require('gulp-util'); // deprecated
 var beeper = require('beeper');
 var fanlog = require('fancy-log');
 var livereload = require('gulp-livereload');
