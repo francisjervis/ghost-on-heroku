@@ -40,7 +40,7 @@ function createConfig() {
             // Required: Name of repo you want to save files to
             repo: "ghost-on-heroku",
             // Optional: Will save to branch of repo, defaults to master
-            branch: "gh-pages",
+//             branch: "gh-pages",
             // Optional: Will place the image in the specified directory rather than root
             destination: "uploads",
             // Optional: Will use base URL for image requests
