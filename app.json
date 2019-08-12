@@ -14,7 +14,7 @@
   "env": {
     "PUBLIC_URL": {
       "description": "The HTTPS URL of this app: either your custom domain or default 'herokuapp.com' hostname.",
-      "value": "https://YOURAPPNAME.herokuapp.com"
+      "value": "https://www.progressstudies.org"
     },
     "GITHUB_TOKEN": {
       "description": "Set your token to enable Github file storage. Leave blank to disable file uploads.",
