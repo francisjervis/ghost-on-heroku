@@ -11,8 +11,8 @@
   "version": "1.7.1",
   "dependencies": {
     "casper": "github:tonyrewin/casper-i18n#i18n-translatable-frontend",
-    "ghost": "^1.24.6",
-    "ghost-github": "github:tonyrewin/ghost-github",
+    "ghost": "^2.27.0",
+    "ghost-storage-adapter-s3": "github:colinmeinke/ghost-storage-adapter-s3",
     "mysql": "^2.15.0"
   },
   "scripts": {
